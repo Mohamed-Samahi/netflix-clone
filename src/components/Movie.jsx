@@ -3,7 +3,13 @@ import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 import { UserAuth } from "../context/AuthContext";
-import { updateDoc, arrayUnion, arrayRemove, doc } from "firebase/firestore";
+import {
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
+  doc,
+  // onSnapshot,
+} from "firebase/firestore";
 import { db } from "../firebase";
 
 const Movie = ({ movie }) => {
@@ -11,6 +17,11 @@ const Movie = ({ movie }) => {
   const { user } = UserAuth();
 
   const movieID = doc(db, "users", `${user?.email}`);
+
+  // onSnapshot(movieID, (doc) => {
+  //   const data = doc.data()?.savedShows;
+  //   console.log(data);
+  // });
 
   const saveShow = async () => {
     if (user?.email) {
@@ -20,6 +31,7 @@ const Movie = ({ movie }) => {
           id: movie.id,
           title: movie.title,
           img: movie.backdrop_path,
+          // like: like,
         }),
       });
     } else {
@@ -35,6 +47,7 @@ const Movie = ({ movie }) => {
           id: movie.id,
           title: movie.title,
           img: movie.backdrop_path,
+          // like: like,
         }),
       });
     } else {
