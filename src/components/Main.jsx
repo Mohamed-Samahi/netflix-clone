@@ -29,7 +29,7 @@ const Main = () => {
       <div className="w-full h-full">
         <div className="absolute w-full h-[550px] bg-gradient-to-r from-black"></div>
         <img
-          className="h-full w-full object-cover"
+          className="object-cover w-full h-full"
           src={
             movie
               ? `https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`
@@ -38,16 +38,16 @@ const Main = () => {
           alt={movie?.title}
         />
         <div className="absolute w-full p-4 md:p-8 top-[20%]">
-          <h1 className="text-3xl md:text-5xl font-bold">{movie?.title}</h1>
+          <h1 className="text-3xl font-bold md:text-5xl">{movie?.title}</h1>
           <div className="my-4">
-            <button className="border bg-gray-300 text-black border-gray-300 py-2 px-5">
+            <button className="px-5 py-2 text-black bg-gray-300 border border-gray-300">
               Play
             </button>
-            <button className="border text-white border-gray-300 py-2 px-5 ml-4">
+            <button className="px-5 py-2 ml-4 text-white border border-gray-300">
               Watch Later
             </button>
           </div>
-          <p className="text-gray-400 text-sm">
+          <p className="text-sm text-gray-400">
             Released: {movie?.release_date}
           </p>
           <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">

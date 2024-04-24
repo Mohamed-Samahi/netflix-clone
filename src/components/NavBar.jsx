@@ -20,18 +20,18 @@ const NavBar = () => {
   return (
     <div className="flex justify-between items-center p-4 z-[100] w-full absolute">
       <Link to="/">
-        <h1 className="text-red-600 text-4xl font-bold cursor-pointer">
+        <h1 className="text-4xl font-bold text-red-600 cursor-pointer">
           NETFLIX
         </h1>
       </Link>
       {user?.email ? (
         <div>
           <Link to="/account">
-            <button className="text-white pr-4">Account</button>
+            <button className="pr-4 text-white">Account</button>
           </Link>
           <button
             onClick={logoutHandler}
-            className="bg-red-600 px-6 py-2 rounded cursor-pointer text-white"
+            className="px-6 py-2 text-white bg-red-600 rounded cursor-pointer"
           >
             Logout
           </button>
@@ -39,10 +39,10 @@ const NavBar = () => {
       ) : (
         <div>
           <Link to="/login">
-            <button className="text-white pr-4">Login</button>
+            <button className="pr-4 text-white">Login</button>
           </Link>
           <Link to="/signup">
-            <button className="bg-red-600 px-6 py-2 rounded cursor-pointer text-white">
+            <button className="px-6 py-2 text-white bg-red-600 rounded cursor-pointer">
               Sign Up
             </button>
           </Link>

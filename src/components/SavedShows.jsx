@@ -38,16 +38,16 @@ const SavedShows = () => {
 
   return (
     <>
-      <h2 className="text-white font-bold md:text-xl p-4">My Shows</h2>
+      <h2 className="p-4 font-bold text-white md:text-xl">My Shows</h2>
       <div className="relative flex items-center group">
         <MdChevronLeft
           onClick={slideLeft}
-          className="bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
+          className="absolute left-0 z-10 hidden bg-white rounded-full opacity-50 cursor-pointer hover:opacity-100 group-hover:block"
           size={40}
         />
         <div
           id={"slider"}
-          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
+          className="relative w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide"
         >
           {movies.map((movie) => (
             <div
@@ -55,12 +55,12 @@ const SavedShows = () => {
               className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2"
             >
               <img
-                className="w-full h-auto block"
+                className="block w-full h-auto"
                 src={`https://image.tmdb.org/t/p/w500/${movie?.img}`}
                 alt={movie?.title}
               />
-              <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white">
-                <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
+              <div className="absolute top-0 left-0 w-full h-full text-white opacity-0 hover:bg-black/80 hover:opacity-100">
+                <p className="flex items-center justify-center h-full text-xs font-bold text-center white-space-normal md:text-sm">
                   {movie?.title}
                 </p>
                 <p
@@ -75,7 +75,7 @@ const SavedShows = () => {
         </div>
         <MdChevronRight
           onClick={slideRight}
-          className="bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
+          className="absolute right-0 z-10 hidden bg-white rounded-full opacity-50 cursor-pointer hover:opacity-100 group-hover:block"
           size={40}
         />
       </div>
